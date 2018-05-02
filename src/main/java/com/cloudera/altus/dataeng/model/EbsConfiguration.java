@@ -27,7 +27,7 @@ import com.cloudera.altus.client.AltusResponse;
 /**
  * An EBS configuration for an instance. Any EBS disks configured are added in addition to the root volume.
  **/
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-02-21T23:00:25.094-08:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.446-07:00")
 public class EbsConfiguration  {
 
   /**
@@ -41,7 +41,7 @@ public class EbsConfiguration  {
   private String volumeType = null;
 
   /**
-   * Number of volumes per instance. The default value is 1. Setting this to 0 will not attach any additional EBS volume.
+   * Number of volumes per instance. The default and minimum value is 1. The miximum number is 15.
    **/
   private Integer volumesPerInstance = null;
 

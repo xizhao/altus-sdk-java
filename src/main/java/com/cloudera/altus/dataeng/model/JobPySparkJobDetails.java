@@ -28,7 +28,7 @@ import java.util.*;
 /**
  * PySpark specific job information. This is only ever present for PYSPARK jobs.
  **/
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-02-21T23:00:25.094-08:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.446-07:00")
 public class JobPySparkJobDetails  {
 
   /**
@@ -50,6 +50,11 @@ public class JobPySparkJobDetails  {
    * Arguments for Spark itself respresented by a string (e.g. --executor-memory 4G --num-executors 50 --conf spark.app.name=MyApp).
    **/
   private String sparkArguments = null;
+
+  /**
+   * Only available in CDH513 and above. Contents of the Spark properties file from which Spark loads extra Spark properties.
+   **/
+  private String propertiesFile = null;
 
   /**
    * Getter for mainPy.
@@ -111,6 +116,21 @@ public class JobPySparkJobDetails  {
     this.sparkArguments = sparkArguments;
   }
 
+  /**
+   * Getter for propertiesFile.
+   **/
+  @JsonProperty("propertiesFile")
+  public String getPropertiesFile() {
+    return propertiesFile;
+  }
+
+  /**
+   * Setter for propertiesFile.
+   **/
+  public void setPropertiesFile(String propertiesFile) {
+    this.propertiesFile = propertiesFile;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -132,12 +152,15 @@ public class JobPySparkJobDetails  {
     if (!Objects.equals(this.sparkArguments, jobPySparkJobDetails.sparkArguments)) {
       return false;
     }
+    if (!Objects.equals(this.propertiesFile, jobPySparkJobDetails.propertiesFile)) {
+      return false;
+    }
     return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mainPy, pyFiles, applicationArguments, sparkArguments);
+    return Objects.hash(mainPy, pyFiles, applicationArguments, sparkArguments, propertiesFile);
   }
 
   @Override
@@ -148,6 +171,7 @@ public class JobPySparkJobDetails  {
     sb.append("    pyFiles: ").append(toIndentedString(pyFiles)).append("\n");
     sb.append("    applicationArguments: ").append(toIndentedString(applicationArguments)).append("\n");
     sb.append("    sparkArguments: ").append(toIndentedString(sparkArguments)).append("\n");
+    sb.append("    propertiesFile: ").append(toIndentedString(propertiesFile)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -85,10 +85,10 @@ public class AltusProfileConfigFile {
   }
 
   private static File getAltusDirectory() {
-    return new File(getHomeDiretory(), ".altus");
+    return new File(getHomeDirectory(), ".altus");
   }
 
-  private static String getHomeDiretory() {
+  private static String getHomeDirectory() {
     String userHomeDir = System.getProperty("user.home");
     if (userHomeDir == null) {
       throw new AltusClientException("Unable to load Altus profiles since " +

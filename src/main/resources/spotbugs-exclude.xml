@@ -29,10 +29,4 @@
     <Class name="~com\.cloudera\.altus\..*\.model\..*" />
     <Method name="toIndentedString" />
   </Match>
-
-  <!-- As this fires on calls to checkNotNull(), it is basically useless -->
-  <Match>
-    <Bug pattern="RV_RETURN_VALUE_IGNORED" />
-    <Class name="~com\.cloudera\.altus\..*" />
-  </Match>
 </FindBugsFilter>

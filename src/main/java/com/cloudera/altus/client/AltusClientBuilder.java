@@ -84,7 +84,6 @@ public abstract class AltusClientBuilder <T extends AltusClientBuilder<T>> {
 
   /**
    * Gets the Altus service endpoint.
-   * @param serviceName the name of the Altus service being used
    * @return String - A string with the fully formed Altus service endpoint
    */
   public String getAltusEndPoint() {

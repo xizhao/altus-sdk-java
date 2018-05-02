@@ -29,7 +29,7 @@ import java.util.*;
 /**
  * Response object for a list clusters request.
  **/
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-02-21T23:00:25.094-08:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.446-07:00")
 public class ListClustersResponse extends AltusResponse {
 
   /**

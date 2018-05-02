@@ -60,6 +60,7 @@ public class ValidationUtils {
   /**
    * Like checkNotNull, but throws an AltusClientException.
    * @param ref an object reference
+   * @param <T> The type of the object
    * @return the non-null reference that was validated
    */
   public static <T> T checkNotNullAndThrow(T ref) {

@@ -28,7 +28,7 @@ import com.cloudera.altus.iam.model.AccessKey;
 /**
  * Response object for a create machine user access key request.
  **/
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-02-21T23:00:25.562-08:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:46.083-07:00")
 public class CreateMachineUserAccessKeyResponse extends AltusResponse {
 
   /**

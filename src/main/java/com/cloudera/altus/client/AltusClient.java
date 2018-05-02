@@ -90,6 +90,7 @@ public abstract class AltusClient {
    * @param path The subpath of the HTTP URL
    * @param body The request body object
    * @param returnType The return type as a GenericType
+   * @param <T> The type of the response
    * @return The response body in type of string
    */
   protected <T extends AltusResponse> T invokeAPI(String path, Object body, GenericType<T> returnType) {

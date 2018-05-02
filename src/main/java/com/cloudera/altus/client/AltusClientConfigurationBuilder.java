@@ -114,6 +114,7 @@ public class AltusClientConfigurationBuilder {
    * Sets the value for RetryHandler.  If none is set the SimpleRetryHandler is used.
    * The retry handler determines whether or not to retry service operations in the
    * event of a failure or exception.
+   * @param retryHandler The retry handler to use
    * @return the current value of the flag as a boolean
    */
   public AltusClientConfigurationBuilder withRetryHandler(RetryHandler retryHandler) {
