@@ -24,7 +24,7 @@ import com.cloudera.altus.client.AltusClientBuilder;
 /**
 * This class can be used to build a DataengClient object.
 **/
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.446-07:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-15T16:32:03.781-07:00")
 public class DataengClientBuilder extends AltusClientBuilder<DataengClientBuilder> {
 
   private DataengClientBuilder() {

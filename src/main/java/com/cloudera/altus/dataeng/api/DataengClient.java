@@ -26,6 +26,8 @@ import com.cloudera.altus.client.AltusClient;
 import com.cloudera.altus.client.AltusClientConfiguration;
 import com.cloudera.altus.dataeng.model.CreateAWSClusterRequest;
 import com.cloudera.altus.dataeng.model.CreateAWSClusterResponse;
+import com.cloudera.altus.dataeng.model.CreateAzureClusterRequest;
+import com.cloudera.altus.dataeng.model.CreateAzureClusterResponse;
 import com.cloudera.altus.dataeng.model.DeleteClusterRequest;
 import com.cloudera.altus.dataeng.model.DeleteClusterResponse;
 import com.cloudera.altus.dataeng.model.DescribeClusterRequest;
@@ -42,7 +44,7 @@ import com.cloudera.altus.dataeng.model.SubmitJobsResponse;
 import com.cloudera.altus.dataeng.model.TerminateJobRequest;
 import com.cloudera.altus.dataeng.model.TerminateJobResponse;
 
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.446-07:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-15T16:32:03.781-07:00")
 public class DataengClient extends AltusClient {
 
   public static final String SERVICE_NAME = "dataeng";
@@ -64,6 +66,18 @@ public class DataengClient extends AltusClient {
         throw new AltusClientException("Missing the required parameter 'input' when calling createAWSCluster");
      }
     return this.invokeAPI("/dataeng/createAWSCluster", input, new GenericType<CreateAWSClusterResponse>(){});
+  }
+
+  /**
+   * Creates a new Azure cluster.
+   * @param input
+   * @return CreateAzureClusterResponse
+   */
+  public CreateAzureClusterResponse createAzureCluster(CreateAzureClusterRequest input) {
+     if (input == null) {
+        throw new AltusClientException("Missing the required parameter 'input' when calling createAzureCluster");
+     }
+    return this.invokeAPI("/dataeng/createAzureCluster", input, new GenericType<CreateAzureClusterResponse>(){});
   }
 
   /**

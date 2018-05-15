@@ -28,7 +28,7 @@ import java.util.*;
 /**
  * PySpark specific job information. This is only ever present for PYSPARK jobs.
  **/
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.446-07:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-15T16:32:03.781-07:00")
 public class JobPySparkJobDetails  {
 
   /**

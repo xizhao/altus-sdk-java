@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.cloudera.altus.client.AltusResponse;
 import com.cloudera.altus.dataeng.model.ClusterComputeWorkersConfiguration;
 import com.cloudera.altus.dataeng.model.ClusterNavigatorConfiguration;
+import com.cloudera.altus.dataeng.model.ClusterResourceTagResponse;
 import com.cloudera.altus.dataeng.model.ClusterWorkersConfiguration;
 import com.cloudera.altus.dataeng.model.Endpoint;
 import java.time.ZonedDateTime;
@@ -33,7 +34,7 @@ import java.util.*;
 /**
  * Information about a cluster.
  **/
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.446-07:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-15T16:32:03.781-07:00")
 public class Cluster  {
 
   /**
@@ -135,6 +136,11 @@ public class Cluster  {
    * 
    **/
   private ClusterNavigatorConfiguration navigatorConfiguration = null;
+
+  /**
+   * Tags that were added to cluster-associated resources at cluster creation time. This list does not include those that the Altus service sets.
+   **/
+  private List<ClusterResourceTagResponse> additionalClusterResourceTags = new ArrayList<ClusterResourceTagResponse>();
 
   /**
    * Getter for clusterName.
@@ -436,6 +442,21 @@ public class Cluster  {
     this.navigatorConfiguration = navigatorConfiguration;
   }
 
+  /**
+   * Getter for additionalClusterResourceTags.
+   **/
+  @JsonProperty("additionalClusterResourceTags")
+  public List<ClusterResourceTagResponse> getAdditionalClusterResourceTags() {
+    return additionalClusterResourceTags;
+  }
+
+  /**
+   * Setter for additionalClusterResourceTags.
+   **/
+  public void setAdditionalClusterResourceTags(List<ClusterResourceTagResponse> additionalClusterResourceTags) {
+    this.additionalClusterResourceTags = additionalClusterResourceTags;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -505,12 +526,15 @@ public class Cluster  {
     if (!Objects.equals(this.navigatorConfiguration, cluster.navigatorConfiguration)) {
       return false;
     }
+    if (!Objects.equals(this.additionalClusterResourceTags, cluster.additionalClusterResourceTags)) {
+      return false;
+    }
     return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clusterName, crn, creationDate, status, cdhVersion, instanceType, hasInstanceBootstrapScript, workersGroupSize, serviceType, environmentType, environmentCrn, automaticTerminationCondition, failureCodes, failureReason, logArchiveLocation, clouderaManagerEndpoint, computeWorkersConfiguration, workersConfiguration, workloadAnalyticsEnabled, navigatorConfiguration);
+    return Objects.hash(clusterName, crn, creationDate, status, cdhVersion, instanceType, hasInstanceBootstrapScript, workersGroupSize, serviceType, environmentType, environmentCrn, automaticTerminationCondition, failureCodes, failureReason, logArchiveLocation, clouderaManagerEndpoint, computeWorkersConfiguration, workersConfiguration, workloadAnalyticsEnabled, navigatorConfiguration, additionalClusterResourceTags);
   }
 
   @Override
@@ -537,6 +561,7 @@ public class Cluster  {
     sb.append("    workersConfiguration: ").append(toIndentedString(workersConfiguration)).append("\n");
     sb.append("    workloadAnalyticsEnabled: ").append(toIndentedString(workloadAnalyticsEnabled)).append("\n");
     sb.append("    navigatorConfiguration: ").append(toIndentedString(navigatorConfiguration)).append("\n");
+    sb.append("    additionalClusterResourceTags: ").append(toIndentedString(additionalClusterResourceTags)).append("\n");
     sb.append("}");
     return sb.toString();
   }

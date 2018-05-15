@@ -23,6 +23,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.cloudera.altus.client.AltusResponse;
+import com.cloudera.altus.dataeng.model.ClusterResourceTagRequest;
 import com.cloudera.altus.dataeng.model.CreateAWSClusterRequestComputeWorkersConfiguration;
 import com.cloudera.altus.dataeng.model.CreateAWSClusterRequestWorkersConfiguration;
 import com.cloudera.altus.dataeng.model.JobRequest;
@@ -31,7 +32,7 @@ import java.util.*;
 /**
  * Request object for a create AWS cluster request.
  **/
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.446-07:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-15T16:32:03.781-07:00")
 public class CreateAWSClusterRequest  {
 
   /**
@@ -113,6 +114,11 @@ public class CreateAWSClusterRequest  {
    * The SSH public key to connect to the cluster. The user uses the private key that corresponds to the public key to SSH into the cluster.
    **/
   private String publicKey = null;
+
+  /**
+   * Tags added to cluster-associated resources at cluster creation time. These tags are in addition to those that the Altus service sets. See the AWS documentation for tagging restrictions.
+   **/
+  private List<ClusterResourceTagRequest> additionalClusterResourceTags = new ArrayList<ClusterResourceTagRequest>();
 
   /**
    * Getter for clusterName.
@@ -354,6 +360,21 @@ public class CreateAWSClusterRequest  {
     this.publicKey = publicKey;
   }
 
+  /**
+   * Getter for additionalClusterResourceTags.
+   **/
+  @JsonProperty("additionalClusterResourceTags")
+  public List<ClusterResourceTagRequest> getAdditionalClusterResourceTags() {
+    return additionalClusterResourceTags;
+  }
+
+  /**
+   * Setter for additionalClusterResourceTags.
+   **/
+  public void setAdditionalClusterResourceTags(List<ClusterResourceTagRequest> additionalClusterResourceTags) {
+    this.additionalClusterResourceTags = additionalClusterResourceTags;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -411,12 +432,15 @@ public class CreateAWSClusterRequest  {
     if (!Objects.equals(this.publicKey, createAWSClusterRequest.publicKey)) {
       return false;
     }
+    if (!Objects.equals(this.additionalClusterResourceTags, createAWSClusterRequest.additionalClusterResourceTags)) {
+      return false;
+    }
     return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clusterName, cdhVersion, instanceType, serviceType, environmentName, workersGroupSize, sshPrivateKey, instanceBootstrapScript, computeWorkersConfiguration, workersConfiguration, clouderaManagerUsername, clouderaManagerPassword, automaticTerminationCondition, jobSubmissionGroupName, jobs, publicKey);
+    return Objects.hash(clusterName, cdhVersion, instanceType, serviceType, environmentName, workersGroupSize, sshPrivateKey, instanceBootstrapScript, computeWorkersConfiguration, workersConfiguration, clouderaManagerUsername, clouderaManagerPassword, automaticTerminationCondition, jobSubmissionGroupName, jobs, publicKey, additionalClusterResourceTags);
   }
 
   @Override
@@ -439,6 +463,7 @@ public class CreateAWSClusterRequest  {
     sb.append("    jobSubmissionGroupName: ").append(toIndentedString(jobSubmissionGroupName)).append("\n");
     sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
     sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
+    sb.append("    additionalClusterResourceTags: ").append(toIndentedString(additionalClusterResourceTags)).append("\n");
     sb.append("}");
     return sb.toString();
   }

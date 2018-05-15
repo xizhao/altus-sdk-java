@@ -26,6 +26,8 @@ import com.cloudera.altus.client.AltusClient;
 import com.cloudera.altus.client.AltusClientConfiguration;
 import com.cloudera.altus.environments.model.CreateAWSEnvironmentRequest;
 import com.cloudera.altus.environments.model.CreateAWSEnvironmentResponse;
+import com.cloudera.altus.environments.model.CreateAzureEnvironmentRequest;
+import com.cloudera.altus.environments.model.CreateAzureEnvironmentResponse;
 import com.cloudera.altus.environments.model.DeleteEnvironmentRequest;
 import com.cloudera.altus.environments.model.DeleteEnvironmentResponse;
 import com.cloudera.altus.environments.model.Error;
@@ -33,10 +35,12 @@ import com.cloudera.altus.environments.model.GetClientAccountSetupCloudFormation
 import com.cloudera.altus.environments.model.GetClientAccountSetupCloudFormationTemplateResponse;
 import com.cloudera.altus.environments.model.GetInfoForAWSCrossAccountAccessRequest;
 import com.cloudera.altus.environments.model.GetInfoForAWSCrossAccountAccessResponse;
+import com.cloudera.altus.environments.model.GetInfoForAzureCrossAccountAccessRequest;
+import com.cloudera.altus.environments.model.GetInfoForAzureCrossAccountAccessResponse;
 import com.cloudera.altus.environments.model.ListEnvironmentsRequest;
 import com.cloudera.altus.environments.model.ListEnvironmentsResponse;
 
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.900-07:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-15T16:32:04.279-07:00")
 public class EnvironmentsClient extends AltusClient {
 
   public static final String SERVICE_NAME = "environments";
@@ -58,6 +62,18 @@ public class EnvironmentsClient extends AltusClient {
         throw new AltusClientException("Missing the required parameter 'input' when calling createAWSEnvironment");
      }
     return this.invokeAPI("/environments/createAWSEnvironment", input, new GenericType<CreateAWSEnvironmentResponse>(){});
+  }
+
+  /**
+   * Creates a new Azure environment.
+   * @param input
+   * @return CreateAzureEnvironmentResponse
+   */
+  public CreateAzureEnvironmentResponse createAzureEnvironment(CreateAzureEnvironmentRequest input) {
+     if (input == null) {
+        throw new AltusClientException("Missing the required parameter 'input' when calling createAzureEnvironment");
+     }
+    return this.invokeAPI("/environments/createAzureEnvironment", input, new GenericType<CreateAzureEnvironmentResponse>(){});
   }
 
   /**
@@ -94,6 +110,18 @@ public class EnvironmentsClient extends AltusClient {
         throw new AltusClientException("Missing the required parameter 'input' when calling getInfoForAWSCrossAccountAccess");
      }
     return this.invokeAPI("/environments/getInfoForAWSCrossAccountAccess", input, new GenericType<GetInfoForAWSCrossAccountAccessResponse>(){});
+  }
+
+  /**
+   * Retrieves the information required to perform the Azure consent workflow.
+   * @param input
+   * @return GetInfoForAzureCrossAccountAccessResponse
+   */
+  public GetInfoForAzureCrossAccountAccessResponse getInfoForAzureCrossAccountAccess(GetInfoForAzureCrossAccountAccessRequest input) {
+     if (input == null) {
+        throw new AltusClientException("Missing the required parameter 'input' when calling getInfoForAzureCrossAccountAccess");
+     }
+    return this.invokeAPI("/environments/getInfoForAzureCrossAccountAccess", input, new GenericType<GetInfoForAzureCrossAccountAccessResponse>(){});
   }
 
   /**

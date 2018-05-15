@@ -24,17 +24,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.cloudera.altus.client.AltusResponse;
 import com.cloudera.altus.dataeng.model.AWSInstanceConfiguration;
+import com.cloudera.altus.dataeng.model.AzureInstanceConfiguration;
 
 /**
  * Workers group configuration.
  **/
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.446-07:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-15T16:32:03.781-07:00")
 public class ClusterWorkersConfiguration  {
 
   /**
    * AWS-specific instance configuration.
    **/
   private AWSInstanceConfiguration awsDetails = null;
+
+  /**
+   * Azure-specific instance configuration.
+   **/
+  private AzureInstanceConfiguration azureDetails = null;
 
   /**
    * Getter for awsDetails.
@@ -51,6 +57,21 @@ public class ClusterWorkersConfiguration  {
     this.awsDetails = awsDetails;
   }
 
+  /**
+   * Getter for azureDetails.
+   **/
+  @JsonProperty("azureDetails")
+  public AzureInstanceConfiguration getAzureDetails() {
+    return azureDetails;
+  }
+
+  /**
+   * Setter for azureDetails.
+   **/
+  public void setAzureDetails(AzureInstanceConfiguration azureDetails) {
+    this.azureDetails = azureDetails;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -63,12 +84,15 @@ public class ClusterWorkersConfiguration  {
     if (!Objects.equals(this.awsDetails, clusterWorkersConfiguration.awsDetails)) {
       return false;
     }
+    if (!Objects.equals(this.azureDetails, clusterWorkersConfiguration.azureDetails)) {
+      return false;
+    }
     return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(awsDetails);
+    return Objects.hash(awsDetails, azureDetails);
   }
 
   @Override
@@ -76,6 +100,7 @@ public class ClusterWorkersConfiguration  {
     StringBuilder sb = new StringBuilder();
     sb.append("class ClusterWorkersConfiguration {\n");
     sb.append("    awsDetails: ").append(toIndentedString(awsDetails)).append("\n");
+    sb.append("    azureDetails: ").append(toIndentedString(azureDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

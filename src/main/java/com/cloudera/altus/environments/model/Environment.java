@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.cloudera.altus.client.AltusResponse;
 import com.cloudera.altus.environments.model.EnvironmentAwsDetails;
+import com.cloudera.altus.environments.model.EnvironmentAzureDetails;
 import com.cloudera.altus.environments.model.NavigatorConfiguration;
 import com.cloudera.altus.environments.model.WorkloadAnalyticsConfiguration;
 import java.time.ZonedDateTime;
@@ -31,7 +32,7 @@ import java.time.ZonedDateTime;
 /**
  * Container for the environment access data.
  **/
-@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-02T12:03:45.900-07:00")
+@javax.annotation.Generated(value = "com.cloudera.altus.client.codegen.AltusSDKJavaCodegen", date = "2018-05-15T16:32:04.279-07:00")
 public class Environment  {
 
   /**
@@ -58,6 +59,11 @@ public class Environment  {
    * Configurations for integration with Altus Workload Analytics.
    **/
   private WorkloadAnalyticsConfiguration workloadAnalyticsConfiguration = null;
+
+  /**
+   * 
+   **/
+  private EnvironmentAzureDetails azureDetails = null;
 
   /**
    * 
@@ -145,6 +151,21 @@ public class Environment  {
   }
 
   /**
+   * Getter for azureDetails.
+   **/
+  @JsonProperty("azureDetails")
+  public EnvironmentAzureDetails getAzureDetails() {
+    return azureDetails;
+  }
+
+  /**
+   * Setter for azureDetails.
+   **/
+  public void setAzureDetails(EnvironmentAzureDetails azureDetails) {
+    this.azureDetails = azureDetails;
+  }
+
+  /**
    * Getter for awsDetails.
    **/
   @JsonProperty("awsDetails")
@@ -198,6 +219,9 @@ public class Environment  {
     if (!Objects.equals(this.workloadAnalyticsConfiguration, environment.workloadAnalyticsConfiguration)) {
       return false;
     }
+    if (!Objects.equals(this.azureDetails, environment.azureDetails)) {
+      return false;
+    }
     if (!Objects.equals(this.awsDetails, environment.awsDetails)) {
       return false;
     }
@@ -209,7 +233,7 @@ public class Environment  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(environmentName, crn, creationDate, type, workloadAnalyticsConfiguration, awsDetails, navigatorConfiguration);
+    return Objects.hash(environmentName, crn, creationDate, type, workloadAnalyticsConfiguration, azureDetails, awsDetails, navigatorConfiguration);
   }
 
   @Override
@@ -221,6 +245,7 @@ public class Environment  {
     sb.append("    creationDate: ").append(toIndentedString(creationDate)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    workloadAnalyticsConfiguration: ").append(toIndentedString(workloadAnalyticsConfiguration)).append("\n");
+    sb.append("    azureDetails: ").append(toIndentedString(azureDetails)).append("\n");
     sb.append("    awsDetails: ").append(toIndentedString(awsDetails)).append("\n");
     sb.append("    navigatorConfiguration: ").append(toIndentedString(navigatorConfiguration)).append("\n");
     sb.append("}");
