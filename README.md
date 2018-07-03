@@ -1,4 +1,6 @@
 # Cloudera Altus SDK for Java
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxizhao%2Faltus-sdk-java.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxizhao%2Faltus-sdk-java?ref=badge_shield)
+
 
 The Cloudera Altus SDK for Java allows Java developers to work with Cloudera
 Altus services.
@@ -64,3 +66,7 @@ mvn clean install
 
 You can see examples of how to use in the SDK in the separate
 [Samples Repository](https://github.com/cloudera/altus-sdk-java-samples).
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxizhao%2Faltus-sdk-java.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxizhao%2Faltus-sdk-java?ref=badge_large)
